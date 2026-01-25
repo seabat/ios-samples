@@ -4,9 +4,12 @@ import SwiftUI
 struct MainApp: App {
     var body: some Scene {
         WindowGroup {
-            SimpleNav()
+            // SimpleNav()
             // DestinationNav()
-            // MultiScreenPathNav
+            // PathNav()
+            // MultiScreenPathNav()
+            // CustomNavigationBarNav()
+            CustomBackButtonNav()
         }
     }
 }
