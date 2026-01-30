@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct PathNav: View {
+struct DestinationModWithNavigationPathNav: View {
     @State private var path = NavigationPath()
 
      var body: some View {
@@ -49,5 +49,5 @@ struct ScreenView: View {
 }
 
 #Preview {
-    PathNav()
+    DestinationModWithNavigationPathNav()
 }

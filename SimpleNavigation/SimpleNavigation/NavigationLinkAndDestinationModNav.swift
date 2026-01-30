@@ -6,7 +6,7 @@ struct Item: Identifiable, Hashable {
     let description: String
 }
 
-struct DestinationNav: View {
+struct NavigationLinkAndDestinationModNav: View {
     let items = [
         Item(name: "Item 1", description: "Description 1"),
         Item(name: "Item 2", description: "Description 2"),
@@ -41,5 +41,5 @@ struct ItemDetailView: View {
 }
 
 #Preview {
-    DestinationNav()
+    NavigationLinkAndDestinationModNav()
 }
