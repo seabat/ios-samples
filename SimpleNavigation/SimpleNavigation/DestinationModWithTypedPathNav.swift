@@ -18,9 +18,12 @@ struct DetailItem: Hashable {
 }
 
 struct DestinationModWithTypedPathNav: View {
+    
     // NOTE: NavigationPath vs [Destination]()
-    //   ・NavigationPath is type-erased it can hold any Hashable value. Good for heterogeneous navigation.
-    //   ・Typed arrays like [Destination] are strongly typed better for compile-time safety when all destinations are known.
+    //   ・NavigationPath is type-erased it can hold any Hashable value.
+    //    Good for heterogeneous navigation.
+    //   ・Typed arrays like [Destination] are strongly typed better for
+    //    compile-time safety when all destinations are known.
     @State private var path = [Destination]()
     
     var body: some View {

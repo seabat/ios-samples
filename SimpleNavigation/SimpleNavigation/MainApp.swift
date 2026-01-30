@@ -4,7 +4,8 @@ import SwiftUI
 struct MainApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationLinkOnlyNav()
+            NavigatinViewNav()
+            // NavigationLinkOnlyNav()
             // NavigationLinkAndDestinationModNav()
             // DestinationModWithNavigationPathNav()
             // DestinationModWithTypedPathNav()

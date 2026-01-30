@@ -3,6 +3,60 @@
  Navigation API のサンプル集。
 
 
+## NavigationvViewNav
+
+iOS 16 で NavigationStackが推奨されるようになり、NavigationvView は非推奨となった。
+
+#### コード
+
+<table style="width: 100%;">
+<tr>
+<td style="width: 70%; vertical-align: top;">
+
+``` swift
+import SwiftUI
+
+struct NavigatinViewNav: View {
+    var body: some View {
+        NavigationView {
+            List {
+                NavigationLink("Go to Detail", destination: NavigatinDetailView())
+
+                NavigationLink(destination: NavigatinSettingsView()) {
+                    Label("Settings", systemImage: "gear")
+                }
+            }
+            .navigationTitle("Home")
+        }
+        .navigationViewStyle(.stack)
+    }
+}
+
+struct NavigatinDetailView: View {
+    var body: some View {
+        Text("Detail View")
+            .navigationTitle("Detail")
+    }
+}
+
+struct NavigatinSettingsView: View {
+    var body: some View {
+        Text("Settings View")
+            .navigationTitle("Settings")
+    }
+}
+```
+
+</td>
+<td style="width: 30%; vertical-align: top;">
+
+<img src="docs/navigationview.gif" alt="Sample Navigation" height="400">
+
+</td>
+</tr>
+</table>
+
+
 ### NavigationLinkOnlyNav
 
 * `NavigationStack` と `NavigationLink` だけで作ったシンプルなナビゲーション。  
@@ -261,9 +315,12 @@ struct DetailItem: Hashable {
 }
 
 struct DestinationModWithTypedPathNav: View {
+    
     // NOTE: NavigationPath vs [Destination]()
-    //   ・NavigationPath is type-erased it can hold any Hashable value. Good for heterogeneous navigation.
-    //   ・Typed arrays like [Destination] are strongly typed better for compile-time safety when all destinations are known.
+    //   ・NavigationPath is type-erased it can hold any Hashable value. 
+    //    Good for heterogeneous navigation.
+    //   ・Typed arrays like [Destination] are strongly typed better for 
+    //    compile-time safety when all destinations are known.
     @State private var path = [Destination]()
     
     var body: some View {
