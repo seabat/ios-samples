@@ -17,7 +17,7 @@ struct DetailItem: Hashable {
     let description: String
 }
 
-struct MultiScreenPathNav: View {
+struct DestinationModWithTypedPathNav: View {
     // NOTE: NavigationPath vs [Destination]()
     //   ・NavigationPath is type-erased it can hold any Hashable value. Good for heterogeneous navigation.
     //   ・Typed arrays like [Destination] are strongly typed better for compile-time safety when all destinations are known.
@@ -88,5 +88,5 @@ struct DetailScreen: View {
 }
 
 #Preview {
-    MultiScreenPathNav()
+    DestinationModWithTypedPathNav()
 }

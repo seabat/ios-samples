@@ -3,7 +3,7 @@
  Navigation API のサンプル集。
 
 
-### SimpleNav
+### NavigationLinkOnlyNav
 
 * `NavigationStack` と `NavigationLink` だけで作ったシンプルなナビゲーション。  
 * 画面遷移ロジック は `NavigationLink` 内部にあり、`NavigationLink` をクリックしないと動作しない。よって遷移元の画面は `NavigationLink` を使って構築する必要がある。  
@@ -25,7 +25,7 @@ public init(_ titleKey: LocalizedStringKey, @ViewBuilder destination: () -> Dest
 ``` swift
 import SwiftUI
 
-struct SimpleNav: View {
+struct NavigationLinkOnlyNav: View {
     var body: some View {
         NavigationStack {
             List {
@@ -68,7 +68,7 @@ struct SettingsView: View {
 </tr>
 </table>
 
-### DestinationNav
+### NavigationLinkAndDestinationModNav
 
 * `.navigationDestination()` Modifier に 遷移先の View を指定する。  
 * 画面遷移ロジック は `NavigationLink` 内部にあり、`NavigationLink` をクリックしないと動作しない。よって遷移元の画面は `NavigationLink` を使って構築する必要がある。  
@@ -97,7 +97,7 @@ struct Item: Identifiable, Hashable {
     let description: String
 }
 
-struct DestinationNav: View {
+struct NavigationLinkAndDestinationModNav: View {
     let items = [
         Item(name: "Item 1", description: "Description 1"),
         Item(name: "Item 2", description: "Description 2"),
@@ -142,7 +142,7 @@ struct ItemDetailView: View {
 </table>
 
 
-### PathNav
+### DestinationModWithNavigationPathNav
 
 * `.navigationDestination()` Modifier に 遷移先の View を指定する。  
 * `NavigationPath` オブジェクトが更新すると `.navigationDestination()` Modifier のクロージャが発火する。つまり、プログラマティックに画面遷移イベントを発生させることができる。
@@ -163,7 +163,7 @@ struct ItemDetailView: View {
 ```swift
 import SwiftUI
 
-struct PathNav: View {
+struct DestinationModWithNavigationPathNav: View {
     @State private var path = NavigationPath()
 
      var body: some View {
@@ -221,7 +221,7 @@ struct ScreenView: View {
 </tr>
 </table>
 
-### MultiScreenPathNav
+### DestinationModWithTypedPathNav
 
 * API の使い方は PathNav と同じ  
 * `NavigationStack()` に渡す path に遷移先タイプと遷移先に渡したデータを設定する。 
@@ -260,7 +260,7 @@ struct DetailItem: Hashable {
     let description: String
 }
 
-struct MultiScreenPathNav: View {
+struct DestinationModWithTypedPathNav: View {
     // NOTE: NavigationPath vs [Destination]()
     //   ・NavigationPath is type-erased it can hold any Hashable value. Good for heterogeneous navigation.
     //   ・Typed arrays like [Destination] are strongly typed better for compile-time safety when all destinations are known.

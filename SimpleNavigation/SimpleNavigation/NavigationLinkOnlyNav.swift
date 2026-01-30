@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SimpleNav: View {
+struct NavigationLinkOnlyNav: View {
     var body: some View {
         NavigationStack {
             List {
@@ -34,6 +34,6 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SimpleNav()
+    NavigationLinkOnlyNav()
 }
 
